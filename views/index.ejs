@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenication and Authorization</title>
+  </head>
+  <body>
+    <div>
+      <form action="/register" method="post">
+
+        <h3>Register</h3>
+        <label for="username">USERNAME</label>
+        <input name="username" type="text" id="username">
+        <br>
+        <br>
+        <label for="pass">password</label>
+        <input type="password" name="pass" id="pass">
+        <br>
+        <br>
+        <label for="secret" for>secret</label>
+        <input type="text" name="secret" id="secret">
+        <br>
+        <br>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+    <hr>
+    <div>
+      <form action="/login" method="post">
+
+        <h3>LOGIN</h3>
+        <label for="username">USERNAME</label>
+        <input name="username" type="text" id="username">
+        <br>
+        <br>
+        <label for="pass">password</label>
+        <input type="password" name="pass" id="pass">
+        <br>
+        <br>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </body>
+</html>
