@@ -1,3 +1,84 @@
 h1{
 color: aqua;
 }
+//this is React code for form registration
+import React, { useEffect, useState } from 'react'
+const ChildA = () => {
+  const [data, setData] = useState({
+  name: '',
+  email: '',
+  password: '',
+})
+  const [flag, setFlag] = useState(false)
+  
+  useEffect(() => {
+  console.log("Registered", data);
+},[data])
+  
+  const handleData = (e) => {
+    const { name, value } = e.target;
+    setData((prev) =>( {
+     ...prev,
+      [name] : value
+    }))
+    console.log("okokok",data);
+    
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Data submit", data);
+
+    for (const key in data) {
+      if (!data[key]) {
+        alert("please fill all the fields")
+        return
+      }
+    }
+        setFlag(true)
+        setData({
+          name: '',
+          email: '',
+          password: '',
+        })
+        alert("Form submitted successfully")
+        
+      
+    
+  }
+  return (
+    <>
+      {
+        flag  ? ( <div>
+         <h1>Form submitted successfully</h1>
+      
+        </div>) : (
+              <div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <h1>Registration Form</h1>
+          </div>
+          <div>
+            <input type="text" placeholder='Enter your name correctly' name='name' value={data.name} onChange={handleData} />
+          </div>
+          <br />
+          <div>
+            <input type="text" placeholder='Enter your Email correctly' name='email' value={data.email} onChange={handleData}/>
+          </div>
+          <br />
+          <div>
+            <input type="text" placeholder='Enter your password correctly' name='password' value={data.password} onChange={handleData}/>
+          </div>
+          <br />
+          <div>
+            <button type='submit'>Submit</button>
+          </div>
+        </form>
+    </div>
+      )
+      }
+     
+    
+    </>
+  )
+}
+export default ChildA
